@@ -1,0 +1,18 @@
+<div class="video-player">
+  <video{{#if poster}} poster="{{poster}}"{{/if}}>
+    {{#if hd_src}}
+      <source src="{{hd_src}}" type="video/mp4" />
+    {{/if}}
+    {{#if _4k_src}}
+      <source src="{{_4k_src}}" type="video/mp4" />
+    {{/if}}
+  </video>
+  <div class="controls">
+    <button class="vp-play">Play</button>
+    <select class="vp-quality">
+      {{#if hd_src}}<option value="{{hd_src}}">HD</option>{{/if}}
+      {{#if _4k_src}}<option value="{{_4k_src}}">4K</option>{{/if}}
+    </select>
+    <button class="vp-fullscreen">Fullscreen</button>
+  </div>
+</div>
