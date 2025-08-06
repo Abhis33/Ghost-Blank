@@ -1,7 +1,21 @@
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, form, fieldset, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, menu, nav, section, summary, time, mark, audio, video { background: transparent; font-size: 100%; vertical-align: baseline; border: 0; outline: 0; margin: 0; padding: 0; }
 
-html { background: #fff; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; height: 100%; overflow-y: scroll; -webkit-overflow-scrolling: touch; }
-body { font: normal 1em/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif; color: #111; height: 100%; }
+:root {
+  --color-deep-charcoal: #1a1a1a;
+  --color-warm-black: #0f0f0f;
+  --color-silver-highlight: #c4c4c4;
+  --color-golden-hour: #f4a261;
+  --color-pure-white: #ffffff;
+  --color-cinematic-blue: #264653;
+  --color-film-grain-gray: #6c757d;
+  --color-subtle-smoke: #f8f9fa;
+  --font-heading: "Playfair Display", "Times New Roman", serif;
+  --font-body: "Inter", "Helvetica Neue", sans-serif;
+  --font-ui: "Montserrat", "Arial", sans-serif;
+}
+
+html { background: var(--color-deep-charcoal); -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; height: 100%; overflow-y: scroll; -webkit-overflow-scrolling: touch; }
+body { font-family: var(--font-body); font-size: 1.1rem; font-weight: 400; line-height: 1.7; color: var(--color-silver-highlight); background: var(--color-deep-charcoal); height: 100%; }
 
 article, aside, figure, figcaption, footer, header, nav, section { display: block; }
 h1, h2, h3, h4, h5, h6, p, ul, ol, dl, pre, address, table, form, hr, figure, audio, video { margin-bottom: 1.5em; }
@@ -11,19 +25,21 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, dl, pre, address, table, form, hr, figure, au
 /* TYPOGRAPHY
 ------------------------------------------------------------------------------------------------ */
 
-h1 { font-weight: bold; font-size: 3em; line-height: 1.15; margin-bottom: .5em; }
-h2 { font-weight: bold; font-size: 2em; line-height: 1.25; margin-bottom: .75em; }
-h3 { font-weight: bold; font-size: 1.5em; line-height: 1.25; margin-bottom: 1em; }
-h4 { font-weight: bold; font-size: 1em; }
-h5 { font-weight: bold; font-size: 1em; }
-h6 { font-weight: bold; font-size: 1em; }
+h1 { font-family: var(--font-heading); font-weight: 700; font-size: 3.5rem; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: .5em; color: var(--color-pure-white); }
+h2 { font-family: var(--font-heading); font-weight: 600; font-size: 2.8rem; line-height: 1.25; margin-bottom: .75em; color: var(--color-pure-white); }
+h3 { font-family: var(--font-heading); font-weight: 500; font-size: 2.2rem; line-height: 1.25; margin-bottom: 1em; color: var(--color-pure-white); }
+h4 { font-family: var(--font-heading); font-weight: 500; font-size: 1.5rem; color: var(--color-pure-white); }
+h5 { font-family: var(--font-heading); font-weight: 500; font-size: 1.2rem; color: var(--color-pure-white); }
+h6 { font-family: var(--font-heading); font-weight: 500; font-size: 1rem; color: var(--color-pure-white); }
+
+.caption { font-size: 0.9rem; font-weight: 300; opacity: 0.8; }
 
 a, :focus { outline: 0; }
 
-a { color: #07f; text-decoration: none; }
-a:visited { color: #07f; text-decoration: none; }
-a:hover { color: #07f; text-decoration: underline; }
-a:active { color: #07f; text-decoration: underline; }
+a { color: var(--color-cinematic-blue); text-decoration: none; }
+a:visited { color: var(--color-cinematic-blue); text-decoration: none; }
+a:hover { color: var(--color-golden-hour); text-decoration: underline; }
+a:active { color: var(--color-golden-hour); text-decoration: underline; }
 
 a img { border: 0 none; }
 
