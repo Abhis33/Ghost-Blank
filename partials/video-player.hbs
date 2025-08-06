@@ -1,5 +1,5 @@
-<div class="video-player">
-  <video{{#if poster}} poster="{{poster}}"{{/if}}>
+<div class="video-player {{class}}">
+  <video{{#if poster}} poster="{{poster}}"{{/if}} preload="none" playsinline>
     {{#if hd_src}}
       <source src="{{hd_src}}" type="video/mp4" />
     {{/if}}

@@ -27,7 +27,7 @@ Tags: {{tags separator=" | "}}
 {{#if author}}
 <footer>
 <address itemscope itemtype="http://schema.org/Person">
-{{#if author.image}}<div><img src="{{author.image}}" itemprop="image" alt="{{author.name}}" /></div>{{/if}}
+{{#if author.image}}<div><img src="{{author.image}}" itemprop="image" alt="{{author.name}}" loading="lazy" /></div>{{/if}}
 <p>{{author.name}}</p>
 {{#if author.website}}<p>Website: <a href="{{author.website}}" itemprop="url">{{author.website}}</a></p>{{/if}}
 </address>

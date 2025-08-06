@@ -1,5 +1,14 @@
 <div class="gallery">
   {{#foreach images}}
-    <img src="{{this}}" alt="Gallery image" />
+    {{#if url}}
+      <figure>
+        <img src="{{url}}" alt="{{caption}}" loading="lazy" />
+        {{#if caption}}<figcaption>{{caption}}</figcaption>{{/if}}
+      </figure>
+    {{else}}
+      <figure>
+        <img src="{{this}}" alt="Gallery image" loading="lazy" />
+      </figure>
+    {{/if}}
   {{/foreach}}
 </div>

@@ -1,0 +1,64 @@
+{{!< default}}
+{{> header}}
+
+{{#post}}
+<article class="project">
+  {{#if feature_image}}
+    <div class="project-hero">
+      <img src="{{img_url feature_image size="xl"}}" alt="{{title}}" loading="lazy" />
+    </div>
+  {{/if}}
+
+  {{#if hd_video}}
+    {{> "video-player" hd_src=hd_video _4k_src=_4k_video poster=video_poster}}
+  {{/if}}
+
+  {{#if tags}}
+    <ul class="project-categories">
+      {{#foreach tags}}
+        <li>{{name}}</li>
+      {{/foreach}}
+    </ul>
+  {{/if}}
+
+  {{#if crew}}
+    <section class="project-crew">
+      <h2>Crew</h2>
+      <p>{{crew}}</p>
+    </section>
+  {{/if}}
+
+  {{#if awards}}
+    <section class="project-awards">
+      <h2>Awards</h2>
+      <p>{{awards}}</p>
+    </section>
+  {{/if}}
+
+  {{#if technical_specs}}
+    <section class="project-specs">
+      <h2>Technical Specs</h2>
+      <p>{{technical_specs}}</p>
+    </section>
+  {{/if}}
+
+  <section class="project-content">
+    {{content}}
+  </section>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "{{title}}",
+    "url": "{{url absolute="true"}}"{{#if feature_image}},
+    "image": "{{img_url feature_image size="xl" absolute="true"}}"{{/if}}{{#if hd_video}},
+    "video": {
+      "@type": "VideoObject",
+      "contentUrl": "{{hd_video}}"
+    }{{/if}}
+  }
+  </script>
+{{/post}}
+
+{{> footer}}

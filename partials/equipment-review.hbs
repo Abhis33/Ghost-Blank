@@ -1,0 +1,17 @@
+<section class="equipment-review">
+  {{#if title}}<h2>{{title}}</h2>{{/if}}
+  <div class="pros-cons">
+    {{#if pros}}
+    <div class="pros">
+      <h3>Pros</h3>
+      {{{pros}}}
+    </div>
+    {{/if}}
+    {{#if cons}}
+    <div class="cons">
+      <h3>Cons</h3>
+      {{{cons}}}
+    </div>
+    {{/if}}
+  </div>
+</section>
