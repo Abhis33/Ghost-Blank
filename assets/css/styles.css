@@ -130,6 +130,9 @@ img, object, embed {  }
   position: relative;
   padding-bottom: 4px;
   transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .site-nav a::after {
   content: "";
@@ -153,6 +156,7 @@ img, object, embed {  }
   justify-content: space-between;
   width: 20px;
   height: 16px;
+  padding: 14px;
   background: none;
   border: none;
   margin-left: 1rem;
@@ -193,6 +197,9 @@ img, object, embed {  }
   color: var(--color-silver-highlight);
   position: relative;
   padding-bottom: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .mobile-menu a::after {
   content: "";
@@ -214,9 +221,27 @@ img, object, embed {  }
   transform: translateY(0);
 }
 
+/* Touch target sizing */
+button,
+.site-nav a,
+.mobile-menu a,
+.search-toggle,
+.hamburger {
+  min-width: 44px;
+  min-height: 44px;
+}
+
 @media (max-width: 767px) {
   .site-nav { display: none; }
   .hamburger { display: flex; }
+  h1 { font-size: 3.3rem; }
+  h2 { font-size: 2.6rem; }
+  h3 { font-size: 2rem; }
+  h4 { font-size: 1.3rem; }
+  h5 { font-size: 1rem; }
+  h6 { font-size: 0.8rem; }
+  .gallery { grid-template-columns: 1fr; gap: 2rem; }
+  .project-grid { grid-template-columns: 1fr; gap: 2rem; }
 }
 .search-toggle {
   background: none;
@@ -226,6 +251,7 @@ img, object, embed {  }
   display: flex;
   align-items: center;
   margin-left: 1.5rem;
+  padding: 12px;
 }
 .search-form {
   position: absolute;
@@ -245,6 +271,8 @@ img, object, embed {  }
 .site-header.search-open .search-form {
   transform: scaleX(1);
 }
+
+.hero-image { display: none; }
 
 /* ANIMATIONS & INTERACTIONS
 ------------------------------------------------------------------------------------------------ */
@@ -478,8 +506,9 @@ img.progressive {
   border: 1px solid var(--color-film-grain-gray);
 }
 
-/* Image Gallery */
-.gallery {
+/* Image Gallery and Project Grid */
+.gallery,
+.project-grid {
   display: grid;
   gap: 1rem;
 }
@@ -610,39 +639,18 @@ M E D I A   Q U E R I E S   >   Min-width:  480px
 
 /*
 ===================================================================================================
-M E D I A   Q U E R I E S   >   Min-width:  768px
+M E D I A   Q U E R I E S   >   Tablet: 768px - 1023px
 ===================================================================================================
 */
 
-@media only screen and (min-width: 768px) {
-
-
-
-/* TYPOGRAPHY
------------------------------------------------------------------------------------------------- */
-
-
-
-/* MEDIA
------------------------------------------------------------------------------------------------- */
-
-
-
-/* MODUL: HEADER (Masthead)
------------------------------------------------------------------------------------------------- */
-
-
-
-/* MODUL: MAIN
------------------------------------------------------------------------------------------------- */
-
-
-
-/* MODUL: FOOTER (Contentinfo)
------------------------------------------------------------------------------------------------- */
-
-
-
+@media (min-width: 768px) and (max-width: 1023px) {
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+  .project-grid { grid-template-columns: repeat(2, 1fr); }
+  .video-player button,
+  .video-player select {
+    min-width: 48px;
+    min-height: 48px;
+  }
 }
 
 
@@ -651,39 +659,13 @@ M E D I A   Q U E R I E S   >   Min-width:  768px
 
 /*
 ===================================================================================================
-M E D I A   Q U E R I E S   >   Min-width:  992px
+M E D I A   Q U E R I E S   >   Desktop: 1024px - 1439px
 ===================================================================================================
 */
 
-@media only screen and (min-width: 992px) {
-
-
-
-/* TYPOGRAPHY
------------------------------------------------------------------------------------------------- */
-
-
-
-/* MEDIA
------------------------------------------------------------------------------------------------- */
-
-
-
-/* MODUL: HEADER (Masthead)
------------------------------------------------------------------------------------------------- */
-
-
-
-/* MODUL: MAIN
------------------------------------------------------------------------------------------------- */
-
-
-
-/* MODUL: FOOTER (Contentinfo)
------------------------------------------------------------------------------------------------- */
-
-
-
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .gallery { grid-template-columns: repeat(3, 1fr); }
+  .project-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 
@@ -692,39 +674,13 @@ M E D I A   Q U E R I E S   >   Min-width:  992px
 
 /*
 ===================================================================================================
-M E D I A   Q U E R I E S   >   Min-width:  1382px
+M E D I A   Q U E R I E S   >   Large Desktop: 1440px+
 ===================================================================================================
 */
 
-@media only screen and (min-width: 1382px) {
-
-
-
-/* TYPOGRAPHY
------------------------------------------------------------------------------------------------- */
-
-
-
-/* MEDIA
------------------------------------------------------------------------------------------------- */
-
-
-
-/* MODUL: HEADER (Masthead)
------------------------------------------------------------------------------------------------- */
-
-
-
-/* MODUL: MAIN
------------------------------------------------------------------------------------------------- */
-
-
-
-/* MODUL: FOOTER (Contentinfo)
------------------------------------------------------------------------------------------------- */
-
-
-
+@media (min-width: 1440px) {
+  .gallery { grid-template-columns: repeat(4, 1fr); }
+  .project-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
 

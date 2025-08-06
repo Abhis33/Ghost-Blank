@@ -33,6 +33,27 @@ document.addEventListener('DOMContentLoaded', () => {
     );
   }
 
+  const heroVideo = document.querySelector('.hero-video');
+  const heroImage = document.querySelector('.hero-image');
+  if (heroVideo && heroImage) {
+    const mq = window.matchMedia('(max-width: 767px)');
+    const swapHero = (e) => {
+      if (e.matches) {
+        heroVideo.style.display = 'none';
+        heroImage.style.display = 'block';
+      } else {
+        heroVideo.style.display = '';
+        heroImage.style.display = '';
+      }
+    };
+    swapHero(mq);
+    if (mq.addEventListener) {
+      mq.addEventListener('change', swapHero);
+    } else {
+      mq.addListener(swapHero);
+    }
+  }
+
   // Progressive Images
   document.querySelectorAll('img.progressive').forEach((img) => {
     img.classList.add('loading');
