@@ -1,9 +1,26 @@
-<header class="masthead" role="banner" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
-<div>
+<header class="site-header" role="banner">
+  <div class="logo">
+    {{#if @blog.logo}}
+      <a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
+    {{else}}
+      <a class="site-title" href="{{@blog.url}}">{{@blog.title}}</a>
+    {{/if}}
+  </div>
 
-{{#if @blog.logo}}<a class="logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
-<h1 class="blog-title">{{@blog.title}}</h1>
-<h2 class="blog-description">{{@blog.description}}</h2>
+  <nav class="site-nav" role="navigation">
+    {{navigation}}
+  </nav>
 
-</div>
+  <button class="search-toggle" aria-label="Toggle search">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="2"/>
+      <line x1="13.4142" y1="13" x2="19" y2="18.5858" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </button>
+
+  <div class="search-form" role="search">
+    <form action="/search" method="get">
+      <input type="search" name="q" placeholder="Search..." />
+    </form>
+  </div>
 </header>
