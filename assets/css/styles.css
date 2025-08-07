@@ -114,7 +114,13 @@ img, object, embed {  }
   text-decoration: none;
 }
 .site-nav {
+  margin-left: 2rem;
+}
+
+.header-tools {
   margin-left: auto;
+  display: flex;
+  align-items: center;
 }
 .site-nav ul {
   list-style: none;
@@ -167,7 +173,18 @@ img, object, embed {  }
   width: 100%;
   height: 2px;
   background: var(--color-silver-highlight);
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -182,6 +199,7 @@ img, object, embed {  }
   transform: translateY(-100%);
   transition: transform 0.3s ease;
   z-index: 1500;
+  pointer-events: none;
 }
 .mobile-menu ul {
   list-style: none;
@@ -219,6 +237,11 @@ img, object, embed {  }
 }
 .mobile-menu.open {
   transform: translateY(0);
+  pointer-events: auto;
+}
+
+body.menu-open {
+  overflow: hidden;
 }
 
 /* Touch target sizing */

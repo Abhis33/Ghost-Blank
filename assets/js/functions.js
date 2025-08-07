@@ -25,11 +25,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
-    });
-    mobileMenu.querySelectorAll('a').forEach((link) =>
-      link.addEventListener('click', () => mobileMenu.classList.remove('open'))
+    const links = mobileMenu.querySelectorAll('a');
+    const toggleMenu = () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      document.body.classList.toggle('menu-open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+    };
+    hamburger.addEventListener('click', toggleMenu);
+    links.forEach((link) =>
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('open');
+        document.body.classList.remove('menu-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      })
     );
   }
 
