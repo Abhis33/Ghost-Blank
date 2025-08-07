@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CineCraft Design System - Cinematic theme for filmmakers
+All colors MUST be HSL for consistency.
+*/
+
+@layer base {
+  :root {
+    /* CineCraft Color Palette */
+    --background: 0 0% 10.2%; /* Deep Charcoal #1a1a1a */
+    --foreground: 0 0% 76.9%; /* Silver Highlight #c4c4c4 */
+
+    --card: 0 0% 5.9%; /* Warm Black #0f0f0f */
+    --card-foreground: 0 0% 100%; /* Pure White */
+
+    --popover: 0 0% 5.9%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 36 82% 67.1%; /* Golden Hour #f4a261 */
+    --primary-foreground: 0 0% 5.9%;
+
+    --secondary: 174 47% 29%; /* Cinematic Blue #264653 */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 5.9%;
+    --muted-foreground: 210 9% 48%; /* Film Grain Gray #6c757d */
+
+    --accent: 36 82% 67.1%; /* Golden Hour accent */
+    --accent-foreground: 0 0% 5.9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 36 82% 67.1%;
+
+    --radius: 0.5rem;
+
+    /* Custom CineCraft tokens */
+    --warm-black: 0 0% 5.9%; /* #0f0f0f */
+    --silver-highlight: 0 0% 76.9%; /* #c4c4c4 */
+    --golden-hour: 36 82% 67.1%; /* #f4a261 */
+    --cinematic-blue: 174 47% 29%; /* #264653 */
+    --film-grain: 210 9% 48%; /* #6c757d */
+    --subtle-smoke: 0 0% 97.3%; /* #f8f9fa */
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--warm-black)) 0%, hsl(var(--background)) 100%);
+    --gradient-overlay: linear-gradient(180deg, transparent 0%, hsla(var(--warm-black), 0.8) 100%);
+    --gradient-golden: linear-gradient(135deg, hsl(var(--golden-hour)) 0%, hsl(36, 70%, 55%) 100%);
+
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsla(var(--warm-black), 0.5);
+    --shadow-glow: 0 0 40px hsla(var(--golden-hour), 0.3);
+    --shadow-cinematic: 0 25px 50px -12px hsla(var(--warm-black), 0.8);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-quick: all 0.2s ease;
+    --transition-cinematic: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .light {
+    --background: 0 0% 97.3%; /* Subtle Smoke #f8f9fa */
+    --foreground: 0 0% 10.2%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10.2%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 210 9% 48%;
+    --border: 0 0% 90%;
+    --input: 0 0% 95%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+
+  .font-playfair {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+  }
+
+  .font-inter {
+    font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  }
+
+  .font-montserrat {
+    font-family: 'Montserrat', 'Arial', sans-serif;
+  }
+}
+
+@layer components {
+  /* Cinematic animations and utilities */
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.2s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .hover-scale {
+    transition: transform var(--transition-quick);
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  .cinematic-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-overlay {
+    background: var(--gradient-overlay);
+  }
+
+  .gradient-golden {
+    background: var(--gradient-golden);
+  }
+
+  /* Custom underline animation */
+  .story-link {
+    position: relative;
+    display: inline-block;
+  }
+
+  .story-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: hsl(var(--golden-hour));
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+  }
+
+  .story-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}
+
+@layer utilities {
+  .text-shadow-cinematic {
+    text-shadow: 0 2px 10px hsla(var(--warm-black), 0.8);
+  }
+}
