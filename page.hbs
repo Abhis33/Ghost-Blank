@@ -3,16 +3,21 @@
 
 {{#post}}
 <article class="page">
-  {{#if feature_image}}
-    <figure class="page-hero">
-      <img src="{{img_url feature_image size="xl"}}" alt="{{title}}" />
-    </figure>
+  {{#if @page.show_title_and_feature_image}}
+    {{#if feature_image}}
+      <figure class="page-hero">
+        <img src="{{img_url feature_image size="xl"}}" alt="{{title}}" />
+      </figure>
+    {{/if}}
+    <section class="page-content">
+      <h1>{{title}}</h1>
+      {{content}}
+    </section>
+  {{else}}
+    <section class="page-content">
+      {{content}}
+    </section>
   {{/if}}
-
-  <section class="page-content">
-    <h1>{{title}}</h1>
-    {{content}}
-  </section>
 </article>
 {{/post}}
 

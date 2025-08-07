@@ -872,3 +872,14 @@ img { page-break-inside: avoid; }
 .interview dd {
   margin: 0 0 1rem 0;
 }
+
+/* Koenig editor image widths */
+.kg-width-wide {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.kg-width-full {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
