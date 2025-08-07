@@ -1,0 +1,85 @@
+{{!< default}}
+{{> header}}
+
+{{#post}}
+<article class="project">
+  {{#if feature_image}}
+    <div class="project-hero" style="background-image: url({{img_url feature_image size="xl"}});"></div>
+  {{/if}}
+
+  {{#if custom_excerpt}}
+    <p class="project-tagline">{{custom_excerpt}}</p>
+  {{/if}}
+
+  {{#if hd_video}}
+    {{> "video-player" hd_src=hd_video _4k_src=_4k_video poster=video_poster}}
+  {{/if}}
+
+  {{#if video_length}}
+    <p class="project-duration">{{video_length}}</p>
+  {{/if}}
+
+  {{#if tags}}
+    <ul class="project-categories">
+      {{#foreach tags}}
+        <li>{{name}}</li>
+      {{/foreach}}
+    </ul>
+  {{/if}}
+
+  {{#if crew}}
+    <section class="project-crew">
+      <h2>Crew</h2>
+      <p>{{crew}}</p>
+    </section>
+  {{/if}}
+
+  {{#if awards}}
+    <section class="project-awards">
+      <h2>Awards</h2>
+      {{#foreach awards}}
+        <img src="{{this}}" alt="Festival Badge">
+      {{/foreach}}
+    </section>
+  {{/if}}
+
+  {{#if technical_specs}}
+    <section class="project-specs">
+      <h2>Technical Specs</h2>
+      <p>{{technical_specs}}</p>
+    </section>
+  {{/if}}
+
+  {{#if camera_gear}}
+    <section class="project-equipment">
+      <h2>Equipment</h2>
+      <ul class="equipment-list">
+        {{#foreach camera_gear}}
+          <li>{{this}}</li>
+        {{/foreach}}
+      </ul>
+    </section>
+  {{/if}}
+
+  <section class="project-content">
+    {{content}}
+  </section>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "{{title}}",
+    "url": "{{url absolute="true"}}"{{#if feature_image}},
+    "image": "{{img_url feature_image size="xl" absolute="true"}}"{{/if}}{{#if hd_video}},
+    "video": {
+      "@type": "VideoObject",
+      "contentUrl": "{{hd_video}}"
+    }{{/if}}
+  }
+  </script>
+</article>
+{{/post}}
+
+{{> footer}}
+

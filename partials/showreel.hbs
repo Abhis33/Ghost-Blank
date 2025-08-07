@@ -1,0 +1,5 @@
+{{#if @custom.showreel_url}}
+<section class="showreel">
+  {{> "video-player" hd_src=@custom.showreel_url _4k_src=@custom.showreel_4k poster=@custom.showreel_poster class="showreel-player"}}
+</section>
+{{/if}}

@@ -1,0 +1,16 @@
+<article class="project-card {{type}}">
+  <div class="card-media">
+    {{#if feature_image}}
+      <img src="{{img_url feature_image}}" alt="{{title}}" loading="lazy" />
+    {{/if}}
+  </div>
+  <div class="card-overlay">
+    <h3 class="card-title">{{title}}</h3>
+    {{#if primary_tag}}
+      <span class="card-category">{{primary_tag.name}}</span>
+    {{/if}}
+    {{#if meta}}
+      <p class="card-meta">{{meta}}</p>
+    {{/if}}
+  </div>
+</article>
