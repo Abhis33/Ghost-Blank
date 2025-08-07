@@ -1,0 +1,21 @@
+{{!< default}}
+{{> header}}
+
+<header class="tag-header">
+  <h1>{{tag.name}}</h1>
+  {{#if tag.description}}
+    <p>{{tag.description}}</p>
+  {{/if}}
+</header>
+
+<section class="post-feed">
+  {{#foreach posts}}
+    <article class="post-card">
+      <h2><a href="{{url}}">{{title}}</a></h2>
+    </article>
+  {{/foreach}}
+</section>
+
+{{pagination}}
+
+{{> footer}}

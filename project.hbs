@@ -4,13 +4,19 @@
 {{#post}}
 <article class="project">
   {{#if feature_image}}
-    <div class="project-hero">
-      <img src="{{img_url feature_image size="xl"}}" alt="{{title}}" loading="lazy" />
-    </div>
+    <div class="project-hero" style="background-image: url({{img_url feature_image size="xl"}});"></div>
+  {{/if}}
+
+  {{#if custom_excerpt}}
+    <p class="project-tagline">{{custom_excerpt}}</p>
   {{/if}}
 
   {{#if hd_video}}
     {{> "video-player" hd_src=hd_video _4k_src=_4k_video poster=video_poster}}
+  {{/if}}
+
+  {{#if video_length}}
+    <p class="project-duration">{{duration_format video_length}}</p>
   {{/if}}
 
   {{#if tags}}
@@ -31,7 +37,7 @@
   {{#if awards}}
     <section class="project-awards">
       <h2>Awards</h2>
-      <p>{{awards}}</p>
+      {{festival_badges awards}}
     </section>
   {{/if}}
 
@@ -39,6 +45,13 @@
     <section class="project-specs">
       <h2>Technical Specs</h2>
       <p>{{technical_specs}}</p>
+    </section>
+  {{/if}}
+
+  {{#if camera_gear}}
+    <section class="project-equipment">
+      <h2>Equipment</h2>
+      {{equipment_list camera_gear}}
     </section>
   {{/if}}
 
@@ -59,6 +72,7 @@
     }{{/if}}
   }
   </script>
+</article>
 {{/post}}
 
 {{> footer}}
