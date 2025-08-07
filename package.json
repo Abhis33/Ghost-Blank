@@ -1,4 +1,7 @@
 {
-  "name": "zitrusfrisch Ghost Blank",
-  "version": "1.0"
+  "name": "cinecraft-theme",
+  "version": "0.1.0",
+  "author": {
+    "email": "hello@example.com"
+  }
 }

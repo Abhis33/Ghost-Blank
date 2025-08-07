@@ -1,9 +1,9 @@
 <header class="site-header" role="banner">
   <div class="logo">
-    {{#if @blog.logo}}
-      <a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
+    {{#if @site.logo}}
+      <a href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
     {{else}}
-      <a class="site-title" href="{{@blog.url}}">{{@blog.title}}</a>
+      <a class="site-title" href="{{@site.url}}">{{@site.title}}</a>
     {{/if}}
   </div>
 
