@@ -16,7 +16,7 @@
   {{/if}}
 
   {{#if video_length}}
-    <p class="project-duration">{{duration_format video_length}}</p>
+    <p class="project-duration">{{video_length}}</p>
   {{/if}}
 
   {{#if tags}}
@@ -37,7 +37,9 @@
   {{#if awards}}
     <section class="project-awards">
       <h2>Awards</h2>
-      {{festival_badges awards}}
+      {{#foreach awards}}
+        <img src="{{this}}" alt="Festival Badge">
+      {{/foreach}}
     </section>
   {{/if}}
 
@@ -51,7 +53,11 @@
   {{#if camera_gear}}
     <section class="project-equipment">
       <h2>Equipment</h2>
-      {{equipment_list camera_gear}}
+      <ul class="equipment-list">
+        {{#foreach camera_gear}}
+          <li>{{this}}</li>
+        {{/foreach}}
+      </ul>
     </section>
   {{/if}}
 
@@ -76,3 +82,4 @@
 {{/post}}
 
 {{> footer}}
+
